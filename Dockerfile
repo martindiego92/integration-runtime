@@ -3,10 +3,10 @@ FROM mcr.microsoft.com/windows/servercore:ltsc2022
 # Download the latest self-hosted integration runtime installer into the SHIR folder
 COPY SHIR C:/SHIR/
 
-COPY denodo-vdp-jdbcdriver.jar C:/Denodo/
+# COPY denodo-vdp-jdbcdriver.jar C:/Denodo/
 
-COPY install-dotnet.ps1 C:/Dotnet/
-RUN powershell -ExecutionPolicy Bypass -File C:/Dotnet/install-dotnet.ps1
+# COPY install-dotnet.ps1 C:/Dotnet/
+# RUN powershell -ExecutionPolicy Bypass -File C:/Dotnet/install-dotnet.ps1
 
 RUN ["powershell", "C:/SHIR/build.ps1"]
 
